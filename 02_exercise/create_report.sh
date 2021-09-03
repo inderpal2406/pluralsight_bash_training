@@ -48,11 +48,11 @@ mkdir -p $directory	# -p flag will ensure error is not thrown if directory alrea
 
 # Initialize the report.
 
-echo "The products in the container $container_id are as below:" > $directory/$report_name
+head -1 ./data.csv > $directory/$report_name
 
 # Process data.csv and generate report of products in desired container_id.
 
-grep -w $container_id ./data.csv | cut -d ',' -f 3 >> $directory/$report_name
+grep -w $container_id ./data.csv >> $directory/$report_name
 
 # Check if valid container id was provided in user input. Display message accordingly.
 
